@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Fractal Instabilities</title>
+  <meta name="description" content="Fractal instability calendar and filter">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">F</div>
+      <div>
+        <div class="brand-title">FRACTAL INSTABILITIES</div>
+        <div class="brand-subtitle">Daily rotation &amp; instability reference</div>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-view="today">Today</button>
+      <button class="nav-btn" data-view="calendar">Calendar</button>
+      <button class="nav-btn" data-view="filter">Filter</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="todayView" class="view">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">TODAY</div>
+          <h1 id="todayTitle">Loading…</h1>
+          <p id="todayStatus" class="muted">Loading spreadsheet data…</p>
+        </div>
+        <button id="todayBtn" class="secondary">Jump to today</button>
+      </div>
+
+      <div class="controls">
+        <label>
+          <span>Date</span>
+          <input id="datePicker" type="date">
+        </label>
+        <label>
+          <span>Fractal</span>
+          <select id="fractalPicker"></select>
+        </label>
+      </div>
+
+      <div id="todayResults" class="cards"></div>
+    </section>
+
+    <section id="calendarView" class="view hidden">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">CALENDAR</div>
+          <h2>Fractal instabilities</h2>
+        </div>
+        <div class="month-controls">
+          <button id="prevMonth" class="icon-btn">‹</button>
+          <input id="monthPicker" type="month">
+          <button id="nextMonth" class="icon-btn">›</button>
+        </div>
+      </div>
+      <div id="calendar" class="calendar"></div>
+    </section>
+
+    <section id="filterView" class="view hidden">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">FILTER</div>
+          <h2>Find a fractal</h2>
+        </div>
+      </div>
+      <div class="filter-panel">
+        <label>
+          <span>Fractal</span>
+          <select id="filterFractal"></select>
+        </label>
+        <label>
+          <span>Instability 1</span>
+          <select id="instab1"></select>
+        </label>
+        <label>
+          <span>Instability 2</span>
+          <select id="instab2"></select>
+        </label>
+        <label>
+          <span>Instability 3</span>
+          <select id="instab3"></select>
+        </label>
+        <label>
+          <span>Remove 1</span>
+          <select id="remove1"></select>
+        </label>
+        <label>
+          <span>Remove 2</span>
+          <select id="remove2"></select>
+        </label>
+        <label>
+          <span>Remove 3</span>
+          <select id="remove3"></select>
+        </label>
+        <button id="clearFilters" class="secondary">Clear filters</button>
+      </div>
+      <div id="filterResults"></div>
+    </section>
+
+    <div id="errorBox" class="error hidden"></div>
+  </main>
+
+  <footer>
+    <span>Standalone local data</span>
+    <span id="lastUpdated"></span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
